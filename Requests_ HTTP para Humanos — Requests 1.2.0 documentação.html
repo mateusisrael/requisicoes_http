@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0045)http://docs.python-requests.org/pt_BR/latest/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>Requests: HTTP para Humanos — Requests 1.2.0 documentação</title>
+    
+    <link rel="stylesheet" href="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/flasky.css" type="text/css">
+    <link rel="stylesheet" href="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/badge_only.css" type="text/css">
+    <link rel="stylesheet" href="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/readthedocs-doc-embed.css" type="text/css">
+    
+    <script src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/7219.js" async="" type="text/javascript"></script><script type="text/javascript" async="" id="gauges-tracker" data-site-id="4ddc27f6613f5d186d000007" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/track.js"></script><script type="text/javascript" async="" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/ga.js"></script><script type="text/javascript" async="" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/load.js"></script><script type="text/javascript" async="" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/ga.js"></script><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/underscore.js"></script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/doctools.js"></script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/translations.js"></script>
+    <script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/readthedocs-doc-embed.js"></script>
+    <link rel="top" title="Requests 1.2.0 documentação" href="http://docs.python-requests.org/pt_BR/latest/#">
+    <link rel="next" title="Introdução" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html">
+
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+<!-- RTD Extra Head -->
+
+
+
+<!-- 
+Read the Docs is acting as the canonical URL for your project. 
+If you want to change it, more info is available in our docs:
+  http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="http://requests-docs-pt.readthedocs.org/pt_BR/latest/">
+
+<script type="text/javascript">
+  // This is included here because other places don't have access to the pagename variable.
+  var READTHEDOCS_DATA = {
+    project: "requests-docs-pt",
+    version: "latest",
+    language: "pt_BR",
+    page: "index",
+    theme: "kr",
+    docroot: "/docs/",
+    api_host: "https://readthedocs.org"
+  }
+  // Old variables
+  var doc_version = "latest";
+  var doc_slug = "requests-docs-pt";
+  var page_name = "index";
+  var html_theme = "kr";
+</script>
+<!-- RTD Analytics Code -->
+<!-- Included in the header because you don't have a footer block. -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17997319-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<!-- end RTD Analytics Code -->
+
+
+<!-- end RTD <extrahead> -->
+
+  </head>
+  <body style="">
+    <div class="related">
+      <h3>Navegação</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="http://docs.python-requests.org/pt_BR/latest/genindex.html" title="Índice Geral" accesskey="I">índice</a></li>
+        <li class="right">
+          <a href="http://docs.python-requests.org/pt_BR/latest/py-modindex.html" title="Índice de Módulos do Python">módulos</a> |</li>
+        <li class="right">
+          <a href="http://docs.python-requests.org/pt_BR/latest/user/intro.html" title="Introdução" accesskey="N">próximo</a> |</li>
+        <li><a href="http://docs.python-requests.org/pt_BR/latest/#">Requests 1.2.0 documentação</a> »</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="requests-http-para-humanos">
+<h1>Requests: HTTP para Humanos<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#requests-http-para-humanos" title="Link permanente para este título">¶</a></h1>
+<p>Release v1.2.0. (<a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/install.html#install"><em>Instalação</em></a>)</p>
+<p>Requests é uma biblioteca HTTP <a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html#apache2"><em>licensiada sob Apache2</em></a>, escrita em Python, para seres humanos.</p>
+<p>O módulo <strong>urllib2</strong>, parte da biblioteca padrão do Python, oferece a maioria das funcionalidades do protocolo HTTP que você precisa,
+mas a API está completamente <strong>quebrada</strong>. Ela foi feita para uma época diferente — e uma web diferente. Ela demanda uma <strong>enorme</strong>
+quantidade de trabalho (inclusive para sobrescrever métodos) para realizar as tarefas mais simples.</p>
+<p>As coisas não deveriam ser desse jeito. Não em Python.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.github.com/user'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="s">'user'</span><span class="p">,</span> <span class="s">'pass'</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span>
+<span class="go">200</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'content-type'</span><span class="p">]</span>
+<span class="go">'application/json; charset=utf8'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">encoding</span>
+<span class="go">'utf-8'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">text</span>
+<span class="go">u'{"type":"User"...'</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="go">{u'private_gists': 419, u'total_private_repos': 77, ...}</span>
+</pre></div>
+</div>
+<p>Veja <a class="reference external" href="https://gist.github.com/973705">um código similiar, sem Requests</a>.</p>
+<p>Requests retira todo o trabalho do protocolo HTTP/1.1 do Python - deixando a integração dos seus serviços web sem problemas. Não há necessidade para adicionar query string nas suas URLs manualmente, ou de codificar seus dados de formulário POST. Keep-alive e gerência de conexões HTTP são 100% automáticas, feitas com <a class="reference external" href="https://github.com/shazow/urllib3">urllib3</a>, que está incluso no Requests.</p>
+<div class="section" id="depoimentos">
+<h2>Depoimentos<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#depoimentos" title="Link permanente para este título">¶</a></h2>
+<p>O Governo de Sua Majestade, Amazon, Google, Twilio, Mozilla, Heroku, PayPal, NPR, Obama for America, Transifex, Native Instruments, The Washington Post, Twitter, SoundCloud, Kippt, Readability, e Institutos Federais dos Estados Unidos usam Requests internamente. Requests já foi baixado mais de 2 milhões de vezes pelo PyPI.</p>
+<dl class="docutils">
+<dt><strong>Armin Ronacher</strong></dt>
+<dd>Requests é o exemplo perfeito de como uma API pode ser bonita com o nível certo de abstração.</dd>
+<dt><strong>Matt DeBoard</strong></dt>
+<dd>Eu vou tatuar o módulo Python do @kennethreitz no meu corpo, de algum jeito. Ele todo.</dd>
+<dt><strong>Daniel Greenfeld</strong></dt>
+<dd>Refiz uma biblioteca com 1200 linhas de código spaghetti com 10 linhas de código graças ao módulo requests do @kennethreitz. Hoje foi SENSACIONAL.</dd>
+<dt><strong>Kenny Meyers</strong></dt>
+<dd>HTTP em Python: Com dúvidas, sem dúvidas, use Requests. Bonito, simples, Pythônico.</dd>
+</dl>
+</div>
+<div class="section" id="funcionalidades">
+<h2>Funcionalidades<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#funcionalidades" title="Link permanente para este título">¶</a></h2>
+<p>Requests está pronto para a web de hoje.</p>
+<ul class="simple">
+<li>Domínios e URLs internacionais</li>
+<li>Keep-Alive e pooling de conexões</li>
+<li>Sessões com persistência de cookies</li>
+<li>Verificação SSL igual aos browsers</li>
+<li>Autenticação com métodos Basic/Digest</li>
+<li>Cookies com chave/valor elegantes</li>
+<li>Descompressão automática</li>
+<li>Corpos de resposta Unicode</li>
+<li>Uploads de arquivos</li>
+<li>Tempo máximo de conexões</li>
+<li>Suporte a <tt class="docutils literal"><span class="pre">.netrc</span></tt></li>
+<li>Python 2.6-3.3</li>
+<li>Thread-safe.</li>
+</ul>
+</div>
+<div class="section" id="guia-do-usuario">
+<h2>Guia do Usuário<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#guia-do-usuario" title="Link permanente para este título">¶</a></h2>
+<p>Esta parte da documentação, que é principalmente prosa, começa com algumas informações
+sobre o Requests e então foca em instruções passo-a-passo para aproveitar o máximo do Requests.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html">Introdução</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html#filosofia">Filosofia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html#licensa-apache2">Licensa Apache2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/intro.html#licensa-do-requests">Licensa do Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/install.html">Instalação</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/install.html#distribute-e-pip">Distribute e Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/install.html#cheeseshop-mirror">Cheeseshop Mirror</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/install.html#usando-o-codigo">Usando o código</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html">Guia de início rápido</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#fazer-uma-requisicao">Fazer uma requisição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#passando-parametros-em-urls">Passando parâmetros em URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#conteudo-da-resposta">Conteúdo da resposta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#resposta-binaria">Resposta binária</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#respota-json">Respota JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#resposta-crua">Resposta crua</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#cabecalhos-personalizados">Cabeçalhos personalizados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#requisicoes-post-mais-complicadas">Requisições POST mais complicadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#post-de-arquivo-multipart">POST de arquivo Multipart</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#codigo-do-status-da-resposta">Código do status da resposta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#cabecalhos-da-resposta">Cabeçalhos da resposta</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#cookies">Cookies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#redirecionamento-e-historico">Redirecionamento e Histórico</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#timeouts">Timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/quickstart.html#erros-e-excecoes">Erros e Exceções</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html">Uso avançado</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#objetos-session">Objetos Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#objetos-request-e-response">Objetos Request e Response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#requisicoes-preparadas">Requisições preparadas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#verificacao-de-certificado-ssl">Verificação de certificado SSL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#fluxo-do-conteudo-do-corpo">Fluxo do conteúdo do corpo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#keep-alive">Keep-Alive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#uploads-com-streaming">Uploads com Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#requisicoes-com-blocos-codificados">Requisições com blocos codificados</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#hooks-de-eventos">Hooks de eventos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#autenticacao-personalizada">Autenticação personalizada</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#requisicoes-de-streaming">Requisições de Streaming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#proxies">Proxies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#concordancia">Concordância</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#verbos-http">Verbos HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#cabecalhos-link">Cabeçalhos Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/advanced.html#transport-adapters">Transport Adapters</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html">Autenticação</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html#http-basic-auth">HTTP Basic Auth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html#autenticacao-digest">Autenticação Digest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html#autenticacao-com-oauth-1">Autenticação com OAuth 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html#outras-formas-de-autenticacao">Outras formas de autenticação</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/user/authentication.html#novas-formas-de-autenticacao">Novas formas de autenticação</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="guia-da-comunidade">
+<h2>Guia da Comunidade<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#guia-da-comunidade" title="Link permanente para este título">¶</a></h2>
+<p>Esta parte da documentação, que é principalmente prosa, detalha o ecossistema
+e a comunidade do Requests.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/community/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/community/out-there.html">Integrações</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/community/out-there.html#artigos-e-palestras">Artigos e Palestras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/community/support.html">Suporte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/community/updates.html">Atualizações</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="documentacao-da-api">
+<h2>Documentação da API<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#documentacao-da-api" title="Link permanente para este título">¶</a></h2>
+<p>Se você estiver procurando por informações sobre uma função, classe ou método específico,
+esta parte da documentação é para você.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/api.html">Interface de Desenvolvedor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/api.html#interface-principal">Interface principal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/api.html#sessoes-de-requisicao">Sessões de requisição</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/api.html#migrando-para-1-x">Migrando para 1.x</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="guia-de-contribuicao">
+<h2>Guia de Contribuição<a class="headerlink" href="http://docs.python-requests.org/pt_BR/latest/#guia-de-contribuicao" title="Link permanente para este título">¶</a></h2>
+<p>Se você quiser contribuir para o projeto, esta parte da documentação é para você.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/dev/philosophy.html">Filosofia de desenvolvimento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/dev/todo.html">Como Ajudar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://docs.python-requests.org/pt_BR/latest/dev/authors.html">Autores</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo">
+  <a href="http://docs.python-requests.org/pt_BR/latest/#">
+    <img class="logo" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/requests-sidebar.png" title="Rezzy a Tartaruga Marinha do Requests">
+  </a>
+</p>
+
+<p>
+  <iframe src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+<p>
+  Requests é uma biblioteca HTTP para Python simples e elegante, feita para
+  seres humanos. Você agora está vendo a documentação de versão de desenvolvimento.
+</p>
+
+
+<h3>Doe</h3>
+<p>
+    Se você ama Requests, considere apoiar o autor <a href="https://www.gittip.com/kennethreitz/">no Gittip</a>:
+</p>
+<p>
+  <iframe style="border: 0; margin: 0; padding: 0;" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/widget.html" width="48pt" height="20pt"></iframe>
+</p>
+
+<p>
+    Se a sua organização usa Requests, considere suporte financeiro:
+
+</p>
+<p>
+  <a href="http://gum.co/RRZc" class="gumroad-button">Requests Pro</a><script type="text/javascript" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/gumroad-button.js"></script>
+</p>
+
+
+<h3>Traduções</h3>
+<ul>
+<li><a href="http://fr.python-requests.org/">French</a></li>
+<li><a href="http://de.python-requests.org/">German</a></li>
+<li><a href="http://jp.python-requests.org/">Japanese</a></li>
+<li><a href="http://cn.python-requests.org/">Chinese</a></li>
+
+
+</ul>
+
+<h3>Links Úteis</h3>
+<ul>
+  <li><a href="http://pypi.python.org/pypi/requests">Requests @ PyPI</a></li>
+  <li><a href="http://github.com/kennethreitz/requests">Requests @ GitHub</a></li>
+  <li><a href="https://flattr.com/thing/442264/Requests">Requests @ Flattr</a></li>
+  <li><a href="http://github.com/kennethreitz/requests/issues">Issue Tracker</a></li>
+</ul>
+<div id="searchbox" style="">
+  <h3>Pesquisa rápida</h3>
+    <form class="search" action="http://docs.python-requests.org/pt_BR/latest/search.html" method="get">
+      <input type="text" name="q">
+      <input type="submit" value="Ir">
+      <input type="hidden" name="check_keywords" value="yes">
+      <input type="hidden" name="area" value="default">
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Digite os termos da busca ou o nome de um módulo, classe ou função.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      © Copyright 2013. A <a href="http://kennethreitz.com/pages/open-projects.html">Kenneth Reitz</a> Project.
+    </div>
+    <a href="https://github.com/kennethreitz/requests" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="./Requests_ HTTP para Humanos — Requests 1.2.0 documentação_files/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" class="github">
+    </a>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+        <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/7219.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
+
+    <script type="text/javascript">
+        new HelloBar(36402,48802);
+    </script>
+
+
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-8742933-11']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+    <script type="text/javascript">
+      (function() {
+        var t   = document.createElement('script');
+        t.type  = 'text/javascript';
+        t.async = true;
+        t.id    = 'gauges-tracker';
+        t.setAttribute('data-site-id',
+                       '4ddc27f6613f5d186d000007');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+      })();
+    </script>
+  
+<!-- Inserted RTD Footer -->
+<div class="injected">
+
+  
+  <div class="rst-versions rst-badge" data-toggle="rst-versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">&nbsp;</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+
+      
+      
+      <dl>
+        <dt>Languages</dt>
+
+        
+        
+        <dd><a href="http://docs.python-requests.org/en/master/">en</a></dd>
+        
+
+        
+        
+        
+        
+        
+        
+        <dd><a href="http://docs.python-requests.org/zh_CN/latest/">zh_CN</a></dd>
+        
+        
+        
+        
+        
+        
+        
+        <dd><a href="http://docs.python-requests.org/de/latest/">de</a></dd>
+        
+        
+        
+        
+        
+        
+        
+        <dd><a href="http://docs.python-requests.org/es/latest/">es</a></dd>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <dd><a href="http://docs.python-requests.org/pl/latest/">pl</a></dd>
+        
+        
+        
+        
+        
+        
+         <strong> 
+        <dd><a href="http://docs.python-requests.org/pt_BR/latest/">pt_BR</a></dd>
+         </strong> 
+        
+        
+        
+
+      </dl>
+      
+      
+      <dl>
+        <dt>Versions</dt>
+        
+         <strong> 
+        <dd><a href="http://docs.python-requests.org/pt_BR/latest/">latest</a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt>Downloads</dt>
+        
+        <dd><a href="http://readthedocs.org/projects/requests-docs-pt/downloads/pdf/latest/">PDF</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/requests-docs-pt/downloads/htmlzip/latest/">HTML</a></dd>
+        
+        <dd><a href="http://readthedocs.org/projects/requests-docs-pt/downloads/epub/latest/">Epub</a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt>On Read the Docs</dt>
+        <dd>
+          <a href="http://readthedocs.org/projects/requests-docs-pt/">Project Home</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/requests-docs-pt/builds/">Builds</a>
+        </dd>
+        <dd>
+          <a href="http://readthedocs.org/projects/requests-docs-pt/downloads/">Downloads</a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt>On GitHub</dt>
+        <dd>
+          <a href="https://github.com/requests/requests-docs-pt/blob/master/docs/index.rst">View</a>
+        </dd>
+        <dd>
+          <a href="https://github.com/requests/requests-docs-pt/edit/master/docs/index.rst">Edit</a>
+        </dd>
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt>Search</dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="http://readthedocs.org/projects/requests-docs-pt/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span>Hosted by <a href="https://readthedocs.org/">Read the Docs</a></span>
+          <span> · </span>
+          <a href="https://docs.readthedocs.io/en/latest/privacy-policy.html">Privacy Policy</a>
+        </small>
+      
+
+      
+    </div>
+  </div>
+  
+
+</div>
+</body></html>
